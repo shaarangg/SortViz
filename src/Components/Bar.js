@@ -1,7 +1,18 @@
 import React from "react";
-
+import { GlobalContext } from "../context";
 function Bar() {
-	return <div>Bar</div>;
+	const { arr } = GlobalContext();
+	return (
+		<main className="bar-container">
+			{arr.map((value, index) => {
+				return (
+					<div id={index} className="bar" style={{ height: `${value}px` }}>
+						Bar {index}
+					</div>
+				);
+			})}
+		</main>
+	);
 }
 
 export default Bar;

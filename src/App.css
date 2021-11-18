@@ -1,0 +1,21 @@
+.bar-container {
+	display: flex;
+	justify-content: center;
+	column-gap: 0.1rem;
+}
+.bar {
+	width: 10px;
+	background-color: aqua;
+}
+.nav-center {
+	display: flex;
+	background-color: var(--nav-color);
+	color: var(--nav-text-color);
+	box-shadow: var(--light-shadow);
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem;
+}
+.nav-title {
+	color: var(--main-color-text);
+}
