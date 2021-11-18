@@ -1,12 +1,4 @@
-.bar-container {
-	display: flex;
-	justify-content: center;
-	column-gap: 0.1rem;
-}
-.bar {
-	width: 10px;
-	background-color: aqua;
-}
+/* Navbar */
 .nav-center {
 	display: flex;
 	background-color: var(--nav-color);
@@ -18,4 +10,17 @@
 }
 .nav-title {
 	color: var(--main-color-text);
+}
+.input {
+	height: 4px;
+	width: 8rem;
+}
+.bar-container {
+	display: flex;
+	justify-content: center;
+	column-gap: 0.1rem;
+}
+.bar {
+	width: 10px;
+	background-color: aqua;
 }
