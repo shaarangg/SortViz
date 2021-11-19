@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import { GlobalContext } from "../context";
 function Navbar() {
-	const { changeCount, generateRandomArray, count, startSort } = GlobalContext();
+	const { changeCount, generateRandomArray, count, startSort, changeAlgo } = GlobalContext();
 	const generateArray = () => {
 		generateRandomArray(count);
 	};
@@ -35,7 +35,7 @@ function Navbar() {
 			</div>
 			<div className="algo">
 				<label htmlFor="algorithm">Algorithm</label>
-				<select name="algorithm" id="algorithm">
+				<select name="algorithm" id="algorithm" onChange={changeAlgo}>
 					<option defaultValue value="BubbleSort">
 						Bubble Sort
 					</option>

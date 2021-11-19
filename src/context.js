@@ -12,9 +12,17 @@ import SelectionSort from "./Sorting-Algorithms/SelectionSort";
 // 	algorithm: "",
 // };
 const AppContext = React.createContext();
+const Algorithms = {
+	BubbleSort: BubbleSort,
+	InsertionSort: InsertionSort,
+	MergeSort: MergeSort,
+	QuickSort: QuickSort,
+	SelectionSort: SelectionSort,
+};
 const AppProvider = ({ children }) => {
 	const [arr, setArr] = useState([]);
 	const [count, setCount] = useState(50);
+	const [algo, setAlgo] = useState("BubbleSort");
 	const generateRandomNumber = (min, max) => {
 		return Math.floor(Math.random() * (max - min) + min);
 	};
@@ -28,15 +36,18 @@ const AppProvider = ({ children }) => {
 	const changeCount = (e) => {
 		setCount(e.target.value);
 	};
+	const changeAlgo = (e) => {
+		setAlgo(e.target.value);
+	};
 	const startSort = () => {
-		console.log("You pressed start");
+		Algorithms[algo]();
 	};
 	useEffect(() => {
 		generateRandomArray(count);
 	}, [count]);
 	return (
 		<AppContext.Provider
-			value={{ generateRandomArray, arr, setArr, changeCount, count, startSort }}
+			value={{ generateRandomArray, arr, setArr, changeCount, count, startSort, changeAlgo }}
 		>
 			{children}
 		</AppContext.Provider>
