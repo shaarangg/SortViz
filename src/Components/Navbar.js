@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { GlobalContext } from "../context";
 function Navbar() {
-	const { changeCount } = GlobalContext();
+	const { changeCount, generateRandomArray, count } = GlobalContext();
+	const generateArray = () => {
+		generateRandomArray(count);
+	};
 	return (
 		<nav className="nav-center">
 			<div className="nav-title">SortViZ</div>
@@ -13,8 +16,8 @@ function Navbar() {
 						id="count"
 						className="count-input"
 						name="count"
-						min="0"
-						max="100"
+						min="20"
+						max="120"
 						onChange={changeCount}
 					></input>
 				</div>
@@ -33,7 +36,7 @@ function Navbar() {
 			<div className="algo">
 				<label for="algorithm">Algorithm</label>
 				<select name="algorithm" id="algorithm">
-					<option selected value="BubbleSort">
+					<option defaultValue value="BubbleSort">
 						Bubble Sort
 					</option>
 					<option value="InsertionSort">Insertion Sort</option>
@@ -43,7 +46,7 @@ function Navbar() {
 				</select>
 			</div>
 			<div className="nav-btn">
-				<button type="button" className="btn">
+				<button type="button" className="btn" onClick={generateArray}>
 					New Array
 				</button>
 				<button type="button" className="btn">

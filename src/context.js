@@ -27,13 +27,12 @@ const AppProvider = ({ children }) => {
 	};
 	const changeCount = (e) => {
 		setCount(e.target.value);
-		console.log(count);
 	};
 	useEffect(() => {
 		generateRandomArray(count);
 	}, [count]);
 	return (
-		<AppContext.Provider value={{ generateRandomArray, arr, setArr, changeCount }}>
+		<AppContext.Provider value={{ generateRandomArray, arr, setArr, changeCount, count }}>
 			{children}
 		</AppContext.Provider>
 	);
