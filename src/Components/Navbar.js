@@ -5,16 +5,22 @@ function Navbar() {
 	return (
 		<nav className="nav-center">
 			<div className="nav-title">SortViZ</div>
-			<input
-				type="range"
-				id="points"
-				className="input"
-				name="points"
-				min="0"
-				max="100"
-				onChange={changeCount}
-			></input>
-			<input type="range" id="points" className="input" name="points" min="0" max="100"></input>
+			<div className="nav-count">
+				<label htmlFor="points">Size</label>
+				<input
+					type="range"
+					id="count"
+					className="input"
+					name="count"
+					min="0"
+					max="100"
+					onChange={changeCount}
+				></input>
+			</div>
+			<div className="nav-delay">
+				<label htmlFor="delay">Speed</label>
+				<input type="range" id="delay" className="input" name="delay" min="0" max="100"></input>
+			</div>
 		</nav>
 	);
 }

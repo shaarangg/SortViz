@@ -1,5 +1,10 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
+import BubbleSort from "./Sorting-Algorithms/BubbleSort";
+import InsertionSort from "./Sorting-Algorithms/InsertionSort";
+import MergeSort from "./Sorting-Algorithms/MergeSort";
+import QuickSort from "./Sorting-Algorithms/QuickSort";
+import SelectionSort from "./Sorting-Algorithms/SelectionSort";
 // const initialState = {
 // 	arr: [],
 // 	count: 0,
