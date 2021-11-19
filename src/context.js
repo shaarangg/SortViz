@@ -9,6 +9,7 @@ import { useContext, useEffect, useState } from "react";
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
 	const [arr, setArr] = useState([]);
+	const [count, setCount] = useState(50);
 	const generateRandomNumber = (min, max) => {
 		return Math.floor(Math.random() * (max - min) + min);
 	};
@@ -19,11 +20,15 @@ const AppProvider = ({ children }) => {
 		}
 		setArr(arr);
 	};
+	const changeCount = (e) => {
+		setCount(e.target.value);
+		console.log(count);
+	};
 	useEffect(() => {
-		generateRandomArray(50);
-	}, []);
+		generateRandomArray(count);
+	}, [count]);
 	return (
-		<AppContext.Provider value={{ generateRandomArray, arr, setArr }}>
+		<AppContext.Provider value={{ generateRandomArray, arr, setArr, changeCount }}>
 			{children}
 		</AppContext.Provider>
 	);
