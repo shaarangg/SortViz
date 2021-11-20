@@ -1,7 +1,8 @@
 import React from "react";
 import { GlobalContext } from "../context";
 function Navbar() {
-	const { changeCount, generateRandomArray, count, startSort, changeAlgo } = GlobalContext();
+	const { changeCount, generateRandomArray, count, startSort, changeAlgo, disable } =
+		GlobalContext();
 	const generateArray = () => {
 		generateRandomArray(count);
 	};
@@ -18,6 +19,7 @@ function Navbar() {
 						name="count"
 						min="20"
 						max="120"
+						disabled={disable}
 						onChange={changeCount}
 					></input>
 				</div>
@@ -35,7 +37,7 @@ function Navbar() {
 			</div>
 			<div className="algo">
 				<label htmlFor="algorithm">Algorithm</label>
-				<select name="algorithm" id="algorithm" onChange={changeAlgo}>
+				<select name="algorithm" id="algorithm" onChange={changeAlgo} disabled={disable}>
 					<option defaultValue value="BubbleSort">
 						Bubble Sort
 					</option>
@@ -46,10 +48,10 @@ function Navbar() {
 				</select>
 			</div>
 			<div className="nav-btn">
-				<button type="button" className="btn" onClick={generateArray}>
+				<button type="button" className="btn" onClick={generateArray} disabled={disable}>
 					New Array
 				</button>
-				<button type="button" className="btn" onClick={startSort}>
+				<button type="button" className="btn" onClick={startSort} disabled={disable}>
 					Start
 				</button>
 			</div>

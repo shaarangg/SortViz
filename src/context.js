@@ -23,6 +23,7 @@ const AppProvider = ({ children }) => {
 	const [arr, setArr] = useState([]);
 	const [count, setCount] = useState(50);
 	const [algo, setAlgo] = useState("BubbleSort");
+	const [disable, setDisable] = useState(false);
 	const generateRandomNumber = (min, max) => {
 		return Math.floor(Math.random() * (max - min) + min);
 	};
@@ -40,14 +41,26 @@ const AppProvider = ({ children }) => {
 		setAlgo(e.target.value);
 	};
 	const startSort = () => {
+		console.log("Start pressed");
+		setDisable(true);
 		Algorithms[algo]();
+		setDisable(false);
 	};
 	useEffect(() => {
 		generateRandomArray(count);
 	}, [count]);
 	return (
 		<AppContext.Provider
-			value={{ generateRandomArray, arr, setArr, changeCount, count, startSort, changeAlgo }}
+			value={{
+				generateRandomArray,
+				arr,
+				setArr,
+				changeCount,
+				count,
+				startSort,
+				changeAlgo,
+				disable,
+			}}
 		>
 			{children}
 		</AppContext.Provider>
