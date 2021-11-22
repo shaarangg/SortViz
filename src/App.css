@@ -88,5 +88,5 @@ select option {
 }
 .bar {
 	width: 10px;
-	background-color: var(--bar-main-color);
+	/* background-color: var(--bar-main-color); */
 }

@@ -5,12 +5,7 @@ import InsertionSort from "./Sorting-Algorithms/InsertionSort";
 import MergeSort from "./Sorting-Algorithms/MergeSort";
 import QuickSort from "./Sorting-Algorithms/QuickSort";
 import SelectionSort from "./Sorting-Algorithms/SelectionSort";
-// const initialState = {
-// 	arr: [],
-// 	count: 0,
-// 	delay: 0,
-// 	algorithm: "",
-// };
+
 const AppContext = React.createContext();
 const Algorithms = {
 	BubbleSort: BubbleSort,
@@ -19,11 +14,12 @@ const Algorithms = {
 	QuickSort: QuickSort,
 	SelectionSort: SelectionSort,
 };
-const Colors = ["#01d5fe", "#fec260", "#32fec3"];
+
 const AppProvider = ({ children }) => {
 	const [arr, setArr] = useState([]);
 	const [count, setCount] = useState(50);
 	const [algo, setAlgo] = useState("BubbleSort");
+	const [color, setColor] = useState([]);
 	const [disable, setDisable] = useState(false);
 	const generateRandomNumber = (min, max) => {
 		return Math.floor(Math.random() * (max - min) + min);
@@ -34,6 +30,7 @@ const AppProvider = ({ children }) => {
 			arr.push(generateRandomNumber(100, 600));
 		}
 		setArr(arr);
+		setColor(Array(count).fill(0));
 	};
 	const changeCount = (e) => {
 		setCount(e.target.value);
@@ -72,6 +69,7 @@ const AppProvider = ({ children }) => {
 				setArr,
 				changeCount,
 				count,
+				color,
 				startSort,
 				changeAlgo,
 				disable,
