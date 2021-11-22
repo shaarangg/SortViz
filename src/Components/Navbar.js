@@ -17,7 +17,7 @@ function Navbar() {
 						id="count"
 						className="count-input"
 						name="count"
-						min="20"
+						min="5"
 						max="120"
 						disabled={disable}
 						onChange={changeCount}

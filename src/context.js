@@ -19,6 +19,7 @@ const Algorithms = {
 	QuickSort: QuickSort,
 	SelectionSort: SelectionSort,
 };
+const Colors = ["#01d5fe", "#fec260", "#32fec3"];
 const AppProvider = ({ children }) => {
 	const [arr, setArr] = useState([]);
 	const [count, setCount] = useState(50);
@@ -40,15 +41,29 @@ const AppProvider = ({ children }) => {
 	const changeAlgo = (e) => {
 		setAlgo(e.target.value);
 	};
-	const startSort = () => {
+	const sleep = () => {
+		return new Promise((resolve) => {
+			setTimeout(resolve, 10);
+		});
+	};
+	const playAnimation = async (arraySteps) => {
+		for (let i = 0; i < arraySteps.length; i++) {
+			await sleep();
+			setArr(arraySteps[i]);
+		}
+	};
+	const startSort = async () => {
 		console.log("Start pressed");
 		setDisable(true);
-		Algorithms[algo]();
+		const arraySteps = Algorithms[algo](arr);
+		await playAnimation(arraySteps);
 		setDisable(false);
 	};
+
 	useEffect(() => {
 		generateRandomArray(count);
 	}, [count]);
+
 	return (
 		<AppContext.Provider
 			value={{

@@ -10,6 +10,9 @@
 	--main-color-text: rgba(255, 255, 255, 0.8);
 	--highlight-color: #1171e8;
 	--hover-color: #e39d25;
+	--bar-main-color: #01d5fe;
+	--bar-compare-color: #fec260;
+	--bar-final-color: #32fec3;
 	--max-width: 900px;
 	--spacing: 0.1rem;
 	--radius: 0.25rem;
