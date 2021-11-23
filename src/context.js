@@ -29,8 +29,9 @@ const AppProvider = ({ children }) => {
 		for (let i = 0; i < count; i++) {
 			arr.push(generateRandomNumber(100, 600));
 		}
+		const color = Array(arr.length).fill(0);
 		setArr(arr);
-		setColor(Array(count).fill(0));
+		setColor(color);
 	};
 	const changeCount = (e) => {
 		setCount(e.target.value);
