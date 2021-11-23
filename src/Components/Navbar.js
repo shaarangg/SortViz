@@ -1,7 +1,7 @@
 import React from "react";
 import { GlobalContext } from "../context";
 function Navbar() {
-	const { changeCount, generateRandomArray, count, startSort, changeAlgo, disable } =
+	const { changeCount, generateRandomArray, count, startSort, changeAlgo, disable, changeSpeed } =
 		GlobalContext();
 	const generateArray = () => {
 		generateRandomArray(count);
@@ -32,6 +32,7 @@ function Navbar() {
 						name="delay"
 						min="0"
 						max="100"
+						onChange={changeSpeed}
 					></input>
 				</div>
 			</div>

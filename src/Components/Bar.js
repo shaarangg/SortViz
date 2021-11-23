@@ -2,7 +2,7 @@ import React from "react";
 import { GlobalContext } from "../context";
 function Bar() {
 	const { arr, color } = GlobalContext();
-	const Colors = ["#01d5fe", "#F37121", "#F05454"];
+	const Colors = ["#2bccf0", "#FFCC1D", "#CD1818", "#21BF73"];
 	return (
 		<main className="bar-container">
 			{arr.map((value, index) => {
