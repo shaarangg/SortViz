@@ -41,20 +41,21 @@ const AppProvider = ({ children }) => {
 	};
 	const sleep = () => {
 		return new Promise((resolve) => {
-			setTimeout(resolve, 10);
+			setTimeout(resolve, 1000);
 		});
 	};
-	const playAnimation = async (arraySteps) => {
-		for (let i = 0; i < arraySteps.length; i++) {
+	const playAnimation = async (arrSteps, colorSteps) => {
+		for (let i = 0; i < arrSteps.length; i++) {
 			await sleep();
-			setArr(arraySteps[i]);
+			setArr(arrSteps[i]);
+			setColor(colorSteps[i]);
 		}
 	};
 	const startSort = async () => {
 		console.log("Start pressed");
 		setDisable(true);
-		const arraySteps = Algorithms[algo](arr);
-		await playAnimation(arraySteps);
+		const { arrSteps, colorSteps } = Algorithms[algo](arr, color);
+		await playAnimation(arrSteps, colorSteps);
 		setDisable(false);
 	};
 
