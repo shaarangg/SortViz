@@ -57,7 +57,7 @@ const AppProvider = ({ children }) => {
 		console.log("Start pressed");
 		setDisable(true);
 		const { arrSteps, colorSteps } = Algorithms[algo](arr, color);
-		// await playAnimation(arrSteps, colorSteps);
+		await playAnimation(arrSteps, colorSteps);
 		// console.log(arrSteps.length, colorSteps.length);
 		setDisable(false);
 	};
