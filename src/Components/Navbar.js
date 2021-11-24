@@ -42,7 +42,6 @@ function Navbar() {
 					<option defaultValue value="BubbleSort">
 						Bubble Sort
 					</option>
-					<option value="InsertionSort">Insertion Sort</option>
 					<option value="MergeSort">Merge Sort</option>
 					<option value="QuickSort">Quick Sort</option>
 					<option value="SelectionSort">Selection Sort</option>

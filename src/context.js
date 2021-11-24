@@ -1,7 +1,6 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
 import BubbleSort from "./Sorting-Algorithms/BubbleSort";
-import InsertionSort from "./Sorting-Algorithms/InsertionSort";
 import MergeSort from "./Sorting-Algorithms/MergeSort";
 import QuickSort from "./Sorting-Algorithms/QuickSort";
 import SelectionSort from "./Sorting-Algorithms/SelectionSort";
@@ -9,7 +8,6 @@ import SelectionSort from "./Sorting-Algorithms/SelectionSort";
 const AppContext = React.createContext();
 const Algorithms = {
 	BubbleSort: BubbleSort,
-	InsertionSort: InsertionSort,
 	MergeSort: MergeSort,
 	QuickSort: QuickSort,
 	SelectionSort: SelectionSort,
@@ -59,7 +57,7 @@ const AppProvider = ({ children }) => {
 		console.log("Start pressed");
 		setDisable(true);
 		const { arrSteps, colorSteps } = Algorithms[algo](arr, color);
-		await playAnimation(arrSteps, colorSteps);
+		// await playAnimation(arrSteps, colorSteps);
 		// console.log(arrSteps.length, colorSteps.length);
 		setDisable(false);
 	};
