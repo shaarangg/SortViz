@@ -1,3 +1,5 @@
+import { swap } from "../helper";
+
 function SelectionSort(arr, color) {
 	const l = arr.length;
 	const newArr = arr.slice();
@@ -21,16 +23,13 @@ function SelectionSort(arr, color) {
 		newColor[min] = 2;
 		colorSteps.push(newColor.slice());
 		arrSteps.push(newArr.slice());
-		let temp = newArr[i];
-		newArr[i] = newArr[min];
-		newArr[min] = temp;
+		swap(newArr, i, min);
 		newColor[min] = 0;
 		newColor[i] = 3;
 		colorSteps.push(newColor.slice());
 		arrSteps.push(newArr.slice());
 	}
 	colorSteps[colorSteps.length - 1] = new Array(newArr.length).fill(3);
-	// console.log("SelectionSort");
 	return { arrSteps, colorSteps };
 }
 export default SelectionSort;

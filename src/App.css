@@ -85,8 +85,8 @@ select option {
 	display: flex;
 	justify-content: center;
 	column-gap: 0.1rem;
+	margin: 0 5rem;
 }
 .bar {
-	width: 10px;
-	/* background-color: var(--bar-main-color); */
+	width: 4px;
 }

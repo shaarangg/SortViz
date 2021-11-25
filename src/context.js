@@ -1,17 +1,8 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
-import BubbleSort from "./Sorting-Algorithms/BubbleSort";
-import MergeSort from "./Sorting-Algorithms/MergeSort";
-import QuickSort from "./Sorting-Algorithms/QuickSort";
-import SelectionSort from "./Sorting-Algorithms/SelectionSort";
+import { generateRandomNumber, Algorithms } from "./helper";
 
 const AppContext = React.createContext();
-const Algorithms = {
-	BubbleSort: BubbleSort,
-	MergeSort: MergeSort,
-	QuickSort: QuickSort,
-	SelectionSort: SelectionSort,
-};
 
 const AppProvider = ({ children }) => {
 	const [arr, setArr] = useState([]);
@@ -20,32 +11,36 @@ const AppProvider = ({ children }) => {
 	const [algo, setAlgo] = useState("BubbleSort");
 	const [color, setColor] = useState([]);
 	const [disable, setDisable] = useState(false);
-	const generateRandomNumber = (min, max) => {
-		return Math.floor(Math.random() * (max - min) + min);
-	};
+
 	const generateRandomArray = (count) => {
 		const arr = [];
 		for (let i = 0; i < count; i++) {
-			arr.push(generateRandomNumber(100, 600));
+			arr.push(generateRandomNumber(10, 600));
 		}
 		const color = Array(arr.length).fill(0);
 		setArr(arr);
 		setColor(color);
 	};
+
 	const changeCount = (e) => {
 		setCount(e.target.value);
 	};
+
 	const changeSpeed = (e) => {
 		setSpeed(e.target.value);
 	};
+
 	const changeAlgo = (e) => {
 		setAlgo(e.target.value);
 	};
+
 	const sleep = () => {
+		console.log(speed);
 		return new Promise((resolve) => {
-			setTimeout(resolve, 10);
+			setTimeout(resolve, 1);
 		});
 	};
+
 	const playAnimation = async (arrSteps, colorSteps) => {
 		for (let i = 0; i < arrSteps.length; i++) {
 			await sleep();
@@ -53,12 +48,12 @@ const AppProvider = ({ children }) => {
 			setColor(colorSteps[i]);
 		}
 	};
+
 	const startSort = async () => {
 		console.log("Start pressed");
 		setDisable(true);
 		const { arrSteps, colorSteps } = Algorithms[algo](arr, color);
 		await playAnimation(arrSteps, colorSteps);
-		// console.log(arrSteps.length, colorSteps.length);
 		setDisable(false);
 	};
 
@@ -86,6 +81,7 @@ const AppProvider = ({ children }) => {
 		</AppContext.Provider>
 	);
 };
+
 const GlobalContext = () => {
 	return useContext(AppContext);
 };

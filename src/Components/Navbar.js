@@ -18,7 +18,7 @@ function Navbar() {
 						className="count-input"
 						name="count"
 						min="5"
-						max="120"
+						max="250"
 						disabled={disable}
 						onChange={changeCount}
 					></input>
@@ -31,7 +31,7 @@ function Navbar() {
 						className="delay-input"
 						name="delay"
 						min="0"
-						max="100"
+						max="1000"
 						onChange={changeSpeed}
 					></input>
 				</div>

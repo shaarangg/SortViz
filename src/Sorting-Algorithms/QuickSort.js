@@ -1,4 +1,4 @@
-import { swap } from "./helper";
+import { swap } from "../helper";
 function partition(newArr, left, right, newColor, arrSteps, colorSteps) {
 	let pivot = newArr[right];
 	let i = left - 1;

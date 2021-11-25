@@ -1,3 +1,4 @@
+import { swap } from "../helper";
 function BubbleSort(arr, color) {
 	const l = arr.length;
 	const newArr = arr.slice();
@@ -11,9 +12,7 @@ function BubbleSort(arr, color) {
 			colorSteps.push(newColor.slice());
 			arrSteps.push(newArr.slice());
 			if (newArr[j] > newArr[j + 1]) {
-				let temp = newArr[j];
-				newArr[j] = newArr[j + 1];
-				newArr[j + 1] = temp;
+				swap(newArr, j, j + 1);
 				newColor[j] = 2;
 				newColor[j + 1] = 2;
 				colorSteps.push(newColor.slice());
