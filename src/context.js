@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { generateRandomNumber, Algorithms } from "./helper";
 
 const AppContext = React.createContext();
@@ -7,7 +7,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
 	const [arr, setArr] = useState([]);
 	const [count, setCount] = useState(50);
-	const [speed, setSpeed] = useState(50);
+	const speed = useRef(50);
 	const [algo, setAlgo] = useState("BubbleSort");
 	const [color, setColor] = useState([]);
 	const [disable, setDisable] = useState(false);
@@ -26,18 +26,14 @@ const AppProvider = ({ children }) => {
 		setCount(e.target.value);
 	};
 
-	const changeSpeed = (e) => {
-		setSpeed(e.target.value);
-	};
-
 	const changeAlgo = (e) => {
 		setAlgo(e.target.value);
 	};
 
 	const sleep = () => {
-		console.log(speed);
+		const spd = speed.current.value;
 		return new Promise((resolve) => {
-			setTimeout(resolve, 1);
+			setTimeout(resolve, 1001 - spd);
 		});
 	};
 
@@ -68,7 +64,6 @@ const AppProvider = ({ children }) => {
 				arr,
 				setArr,
 				changeCount,
-				changeSpeed,
 				count,
 				speed,
 				color,
