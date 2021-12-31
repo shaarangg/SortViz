@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e67fcd8.chunk.css",
-    "main.js": "/static/js/main.dad97856.chunk.js",
-    "main.js.map": "/static/js/main.dad97856.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a4861baa.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a4861baa.js.map",
-    "static/js/2.cba54db5.chunk.js": "/static/js/2.cba54db5.chunk.js",
-    "static/js/2.cba54db5.chunk.js.map": "/static/js/2.cba54db5.chunk.js.map",
-    "static/js/3.909a8ac6.chunk.js": "/static/js/3.909a8ac6.chunk.js",
-    "static/js/3.909a8ac6.chunk.js.map": "/static/js/3.909a8ac6.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.4e67fcd8.chunk.css.map": "/static/css/main.4e67fcd8.chunk.css.map",
-    "static/js/2.cba54db5.chunk.js.LICENSE.txt": "/static/js/2.cba54db5.chunk.js.LICENSE.txt"
+    "main.css": "/SortViz/static/css/main.4e67fcd8.chunk.css",
+    "main.js": "/SortViz/static/js/main.dad97856.chunk.js",
+    "main.js.map": "/SortViz/static/js/main.dad97856.chunk.js.map",
+    "runtime-main.js": "/SortViz/static/js/runtime-main.0be2c502.js",
+    "runtime-main.js.map": "/SortViz/static/js/runtime-main.0be2c502.js.map",
+    "static/js/2.cba54db5.chunk.js": "/SortViz/static/js/2.cba54db5.chunk.js",
+    "static/js/2.cba54db5.chunk.js.map": "/SortViz/static/js/2.cba54db5.chunk.js.map",
+    "static/js/3.909a8ac6.chunk.js": "/SortViz/static/js/3.909a8ac6.chunk.js",
+    "static/js/3.909a8ac6.chunk.js.map": "/SortViz/static/js/3.909a8ac6.chunk.js.map",
+    "index.html": "/SortViz/index.html",
+    "static/css/main.4e67fcd8.chunk.css.map": "/SortViz/static/css/main.4e67fcd8.chunk.css.map",
+    "static/js/2.cba54db5.chunk.js.LICENSE.txt": "/SortViz/static/js/2.cba54db5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a4861baa.js",
+    "static/js/runtime-main.0be2c502.js",
     "static/js/2.cba54db5.chunk.js",
     "static/css/main.4e67fcd8.chunk.css",
     "static/js/main.dad97856.chunk.js"
