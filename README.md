@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# SortViz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small React app that visualizes common sorting algorithms and their performance.
+
+## Demo
+
+Run the app locally to see array sorting visualizations and compare algorithms.
+
+## Features
+
+- Visualizations for Bubble Sort, Merge Sort, Quick Sort, and Selection Sort
+- Adjustable array size and speed controls
+- Step-by-step animation to observe comparisons and swaps
+
+## Prerequisites
+
+- Node.js (v14+ recommended)
+- npm (comes with Node)
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone <repo-url>
+cd SortViz
+npm install
+```
+
+## Running Locally
+
+Start the development server:
+
+```bash
+npm start
+```
+
+Open http://localhost:3000 in your browser. The app hot-reloads during development.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - run the app in development mode
+- `npm run build` - build the app for production
+- `npm test` - run tests (if present)
 
-### `yarn start`
+If your project has additional scripts in `package.json`, use those as applicable.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Key files and folders:
 
-### `yarn test`
+- `public/` - static files and `index.html`
+- `src/` - React source files
+    - `App.js` - main app component
+    - `context.js` - app-wide state/context
+    - `helper.js` - utility helpers
+    - `Components/` - UI components (e.g., `Navbar.js`, `Bar.js`)
+    - `Sorting-Algorithms/` - algorithm implementations (`BubbleSort.js`, `MergeSort.js`, `QuickSort.js`, `SelectionSort.js`)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Adjust paths above if your project structure differs.
 
-### `yarn build`
+## How to Use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Use the controls in the navbar to generate a new array, select an algorithm, and start visualization.
+- Change the array size and animation speed to observe different behaviors.
+- Pause or step through animations (if controls are provided) to inspect intermediate states.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Contributions are welcome. Typical workflow:
 
-### `yarn eject`
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m "Add feature"`)
+4. Push to your branch (`git push origin feature/your-feature`)
+5. Open a pull request describing your changes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Please follow existing code style and add or update tests where appropriate.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project is provided under the MIT License. Change or specify a different license as needed.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contact
 
-## Learn More
+For questions or feedback, open an issue in the repository or contact the maintainers.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you'd like, I can also:
 
-### Code Splitting
+- Add a short GIF or screenshot to the README
+- Detect `package.json` scripts and list them automatically
+- Add a `CONTRIBUTING.md` template
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tell me which of these you'd like next.
